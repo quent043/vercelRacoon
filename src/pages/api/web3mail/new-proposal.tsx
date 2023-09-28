@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { sinceTimestamp, cronDuration } = calculateCronData(
     req,
     RETRY_FACTOR,
-    EmailType.NewProposal,
+    'new-proposal',
   );
 
   try {

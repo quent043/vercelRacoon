@@ -15,7 +15,7 @@ import { parseExpression } from 'cron-parser';
 export const calculateCronData = (
   req: NextApiRequest,
   RETRY_FACTOR: number,
-  emailType: EmailType,
+  apiUri: string,
 ): { cronDuration: number; sinceTimestamp: string } => {
   let sinceTimestamp: string = '';
   let cronDuration = 0;
@@ -23,7 +23,7 @@ export const calculateCronData = (
     sinceTimestamp = req.query.sinceTimestamp as string;
     console.log('Timestamp set from query', sinceTimestamp);
   } else {
-    const cronSchedule = vercel?.crons?.find(cron => cron.type == emailType)?.schedule;
+    const cronSchedule = vercel?.crons?.find(cron => cron.path.includes(apiUri))?.schedule;
     if (cronSchedule) {
       console.log('Timestamp set from cron');
     } else {
