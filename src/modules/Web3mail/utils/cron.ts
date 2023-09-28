@@ -27,7 +27,7 @@ export const calculateCronData = (
     if (cronSchedule) {
       console.log('Timestamp set from cron');
     } else {
-      throw new Error('No vercel.json configured :D');
+      throw new Error('No vercel.json configured');
     }
 
     /** @dev: The timestamp is set to the previous cron execution minus the duration
