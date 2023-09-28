@@ -6,27 +6,27 @@
     {
       "type":"newProposal",
       "path":"/api/iexec/new-proposal?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 0 17 * * ?"
+      "schedule":"0 17 * * *"
     },
     {
       "type":"proposalValidated",
       "path":"/api/iexec/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 0 17 * * ?"
+      "schedule":"0 17 * * *"
     },
     {
       "type":"fundRelease",
       "path":"/api/iexec/fund-release?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 0 17 * * ?"
+      "schedule":"0 17 * * *"
     },
     {
       "type":"review",
       "path":"/api/iexec/review?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 0 17 * * ?"
+      "schedule":"0 17 * * *"
     },
     {
       "type":"newService",
       "path":"/api/iexec/new-service?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 0 17 * * ?"
+      "schedule":"0 17 * * *"
     }
   ]
 }
