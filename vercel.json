@@ -4,12 +4,12 @@
   ],
   "crons":[
     {
-      "path":"/api/iexec/new-proposal?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"43 18 28 * *"
+      "path":"/api/web3mail/new-proposal?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"49 18 28 * *"
     },
     {
-      "path":"/api/iexec/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"43 18 28 * *"
+      "path":"/api/web3mail/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"49 18 28 * *"
     }
   ]
 }
