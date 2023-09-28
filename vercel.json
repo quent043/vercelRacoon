@@ -1,0 +1,32 @@
+{
+  "rewrites":  [
+    {"source": "/(.*)", "destination": "/"}
+  ],
+  "crons":[
+    {
+      "type":"newProposal",
+      "path":"/api/iexec/new-proposal?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"0 */1 * * *"
+    },
+    {
+      "type":"proposalValidated",
+      "path":"/api/iexec/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"0 */1 * * *"
+    },
+    {
+      "type":"fundRelease",
+      "path":"/api/iexec/fund-release?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"0 */1 * * *"
+    },
+    {
+      "type":"review",
+      "path":"/api/iexec/review?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"0 */1 * * *"
+    },
+    {
+      "type":"newService",
+      "path":"/api/iexec/new-service?key=NEXT_PRIVATE_CRON_KEY",
+      "schedule":"0 7 * * *"
+    }
+  ]
+}
