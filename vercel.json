@@ -10,18 +10,6 @@
     {
       "path":"/api/iexec/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
       "schedule":"0 17 * * *"
-    },
-    {
-      "path":"/api/iexec/fund-release?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 17 * * *"
-    },
-    {
-      "path":"/api/iexec/review?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 17 * * *"
-    },
-    {
-      "path":"/api/iexec/new-service?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"0 17 * * *"
     }
   ]
 }
