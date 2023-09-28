@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await mongoose.connect(mongoUri as string);
 
   // Check whether the user provided a timestamp or if it will come from the cron config
-  const { sinceTimestamp, cronDuration } = calculateCronData(req, RETRY_FACTOR, EmailType.Review);
+  const { sinceTimestamp, cronDuration } = calculateCronData(req, RETRY_FACTOR, 'review');
 
   try {
     const response = await getNewReviews(Number(chainId), platformId, sinceTimestamp);
