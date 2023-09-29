@@ -38,6 +38,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prepare": "build-cron",
     "build": "npm run build-cron && next build",
     "build-cron": "ts-node buildVercelConfigFile.ts",
     "start": "next start",
