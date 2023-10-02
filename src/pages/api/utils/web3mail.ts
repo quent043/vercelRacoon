@@ -17,20 +17,27 @@ export const prepareCronApi = (
   }
 
   if (!chainId) {
+    console.log('chainId', chainId)
     return res.status(500).json('Chain Id is not set');
   }
 
   if (!mongoUri) {
+    console.log('mongoUri', mongoUri)
     return res.status(500).json('MongoDb URI is not set');
   }
 
   if (!platformId) {
+    console.log('platformId', platformId)
     return res.status(500).json('Platform Id is not set');
   }
 
   if (!privateKey) {
+    console.log('privateKey', privateKey)
     return res.status(500).json('Private key is not set');
   }
+
+  console.log('ok')
+  return res.status(200).json(`Aucun cas beeeeeehhhh`);
 };
 
 // export const prepareCronApi = (
