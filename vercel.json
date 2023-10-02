@@ -8,8 +8,8 @@
       "schedule":"55 18 28 * *"
     },
     {
-      "path":"/api/web3mail/proposal-validated?key=NEXT_PRIVATE_CRON_KEY",
-      "schedule":"55 18 28 * *"
+      "path":"/api/web3mail/proposal-validated",
+      "schedule":"25 18 02 * *"
     }
   ]
 }
