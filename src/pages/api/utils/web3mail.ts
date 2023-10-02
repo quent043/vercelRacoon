@@ -10,20 +10,51 @@ export const prepareCronApi = (
   privateKey: string | undefined,
   res: NextApiResponse,
 ) => {
-  if (!(cronSecurityKey == `Bearer ${process.env.CRON_SECRET}`)) {
-    return res.status(401).json({ message: process.env.CRON_SECRET });
-  } else if (!chainId) {
+  console.log('pv cron key', process.env.NEXT_PRIVATE_CRON_KEY);
+  console.log('secret', process.env.CRON_SECRET);
+  if (!(cronSecurityKey == `Bearer ${process.env.NEXT_PRIVATE_CRON_KEY}`)) {
+    return res.status(401).json({ message: `Unauthorized` });
+  }
+
+  if (!chainId) {
     return res.status(500).json('Chain Id is not set');
-  } else if (!mongoUri) {
+  }
+
+  if (!mongoUri) {
     return res.status(500).json('MongoDb URI is not set');
-  } else if (!platformId) {
+  }
+
+  if (!platformId) {
     return res.status(500).json('Platform Id is not set');
-  } else  if (!privateKey) {
+  }
+
+  if (!privateKey) {
     return res.status(500).json('Private key is not set');
-  } else {
-    return res.status(200).json(`No new proposals validated available`);
   }
 };
+
+// export const prepareCronApi = (
+//     chainId: string | undefined,
+//     platformId: string | undefined,
+//     mongoUri: string | undefined,
+//     cronSecurityKey: string | undefined,
+//     privateKey: string | undefined,
+//     res: NextApiResponse,
+// ) => {
+//   if (!(cronSecurityKey == `Bearer ${process.env.CRON_SECRET}`)) {
+//     return res.status(401).json({ message: process.env.CRON_SECRET });
+//   } else if (!chainId) {
+//     return res.status(500).json('Chain Id is not set');
+//   } else if (!mongoUri) {
+//     return res.status(500).json('MongoDb URI is not set');
+//   } else if (!platformId) {
+//     return res.status(500).json('Platform Id is not set');
+//   } else  if (!privateKey) {
+//     return res.status(500).json('Private key is not set');
+//   } else {
+//     return res.status(200).json(`No new proposals validated available`);
+//   }
+// };
 
 export const prepareNonCronApi = (
   chainId: string | undefined,

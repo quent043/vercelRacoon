@@ -4,7 +4,7 @@
   ],
   "crons":[
     {
-      "path":"/api/web3mail/new-proposal",
+      "path":"/api/web3mail/review",
       "schedule":"55 18 28 * *"
     },
     {
