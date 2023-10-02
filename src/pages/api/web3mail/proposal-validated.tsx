@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   prepareCronApi(chainId, platformId, mongoUri, cronSecurityKey, privateKey, res);
 
-  return res.status(200).json(`No new proposals validated available, ${req.query}, ${req.body}, ${req.headers}, ${req.rawHeaders}, ${req}`);
+  return res.status(200).json(`No new proposals validated available`);
 
   await mongoose.connect(mongoUri as string);
 
