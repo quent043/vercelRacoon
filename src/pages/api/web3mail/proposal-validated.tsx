@@ -32,8 +32,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   prepareCronApi(chainId, platformId, mongoUri, cronSecurityKey, privateKey, res);
 
-  return res.status(200).json(`No new proposals validated available`);
-
   await mongoose.connect(mongoUri as string);
 
   // Check whether the user provided a timestamp or if it will come from the cron config

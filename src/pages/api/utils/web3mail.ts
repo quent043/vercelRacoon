@@ -12,22 +12,16 @@ export const prepareCronApi = (
 ) => {
   if (process.env.CRON_SECRET && !cronSecurityKey?.includes(process.env.CRON_SECRET)) {
     return res.status(401).json({ message: process.env.CRON_SECRET });
-  }
-
-  if (!chainId) {
+  } else if (!chainId) {
     return res.status(500).json('Chain Id is not set');
-  }
-
-  if (!mongoUri) {
+  } else if (!mongoUri) {
     return res.status(500).json('MongoDb URI is not set');
-  }
-
-  if (!platformId) {
+  } else if (!platformId) {
     return res.status(500).json('Platform Id is not set');
-  }
-
-  if (!privateKey) {
+  } else  if (!privateKey) {
     return res.status(500).json('Private key is not set');
+  } else {
+    return res.status(200).json(`No new proposals validated available`);
   }
 };
 
