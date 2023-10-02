@@ -23,12 +23,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     nonSentEmails = 0;
   const RETRY_FACTOR = 5;
 
-  console.log('req.query', req.query);
-  console.log('req.body', req.body);
-  console.log('req.headers', req.headers.authorization);
-  console.log('req.rawHeaders', req.rawHeaders);
-  console.log('req', req);
-
 
   prepareCronApi(chainId, platformId, mongoUri, cronSecurityKey, privateKey, res);
 
