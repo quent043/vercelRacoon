@@ -10,7 +10,7 @@ export const prepareCronApi = (
   privateKey: string | undefined,
   res: NextApiResponse,
 ) => {
-  if (process.env.CRON_SECRET && !cronSecurityKey?.includes(process.env.CRON_SECRET)) {
+  if (!(cronSecurityKey == `Bearer ${process.env.CRON_SECRET}`)) {
     return res.status(401).json({ message: process.env.CRON_SECRET });
   } else if (!chainId) {
     return res.status(500).json('Chain Id is not set');
