@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const chainId = process.env.NEXT_PUBLIC_DEFAULT_CHAIN_ID as string;
   const platformId = process.env.NEXT_PUBLIC_PLATFORM_ID as string;
   const mongoUri = process.env.NEXT_MONGO_URI as string;
-  const cronSecurityKey = req.query.key as string;
+  const cronSecurityKey = req.headers.authorization as string;
   const privateKey = process.env.NEXT_PUBLIC_WEB3MAIL_PLATFORM_PRIVATE_KEY as string;
 
   let sentEmails = 0,
@@ -25,11 +25,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   console.log('req.query', req.query);
   console.log('req.body', req.body);
-  console.log('req.headers', req.headers);
+  console.log('req.headers', req.headers.authorization);
   console.log('req.rawHeaders', req.rawHeaders);
   console.log('req', req);
 
-  return res.status(200).json(`No new proposals validated available, ${req.query}, ${req.body}, ${req.headers}, ${req.rawHeaders}, ${req}`);
+  // return res.status(200).json(`No new proposals validated available, ${req.query}, ${req.body}, ${req.headers}, ${req.rawHeaders}, ${req}`);
 
   prepareCronApi(chainId, platformId, mongoUri, cronSecurityKey, privateKey, res);
 
