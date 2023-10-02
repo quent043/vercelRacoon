@@ -9,7 +9,7 @@
     },
     {
       "path":"/api/web3mail/proposal-validated",
-      "schedule":"25 18 02 * *"
+      "schedule":"35 18 02 * *"
     }
   ]
 }
