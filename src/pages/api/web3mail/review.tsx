@@ -23,7 +23,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let sentEmails = 0,
     nonSentEmails = 0;
 
-  console.log('req.query', cronSecurityKey);
   prepareCronApi(chainId, platformId, mongoUri, cronSecurityKey, privateKey, res);
 
   await mongoose.connect(mongoUri as string);

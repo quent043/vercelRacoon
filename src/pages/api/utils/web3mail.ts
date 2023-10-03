@@ -35,9 +35,6 @@ export const prepareCronApi = (
     console.log('privateKey', privateKey)
     return res.status(500).json('Private key is not set');
   }
-
-  console.log('ok')
-  return res.status(200).json(`Aucun cas beeeeeehhhh`);
 };
 
 // export const prepareCronApi = (
